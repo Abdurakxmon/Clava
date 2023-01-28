@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.section1{
+    display: none;
+}
+.chiziq{
+    width: 1px;
+    height: 25px;
+    background-color: black;
+    display: inline-block;
+}
+#bosqich1{
+    display: block;
+}
+#bosqich2{
+    display: none;
+}
+#bosqich3{
+    display: none;
+}
+.soz{
+    width: 850px;
+    min-height: 70px;
+    border-radius: 15px;
+    margin: 100px auto;
+    padding:15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background-color: white;
+}
+body{
+    background-color: #55c5ff;
+}
+.keyboard{
+    width: 830px;
+    padding: 7px;
+    border-radius: 9px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 2px grey ;
+    position: relative;
+    height: 315px;
+    background-color: #4cbefa;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    align-items: center;
+    padding: 0 7px;
+
+}
+.true{
+    color: #cede;   
+}
+.aylanalar{
+    width: 80px;
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin: 5px auto;
+    margin-top: 10px;
+    align-items: center;
+}
+.aylana{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000;
+    cursor: pointer;
+}
+.aylana_activ{
+    width: 20px;
+    height: 20px;
+}
+.hand{
+    position: absolute;
+    bottom: -20px;
+    width: 600px;
+    z-index: 0;
+    left: 100px;
+}
+.button{
+    width: 50px;
+    display: flex;
+    margin-left: 3px;
+    margin-right: 3px;
+    justify-content: center;
+    box-shadow: 2px 2px 2px grey;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    color: #88a9b4;
+    font-size: 20px;
+    height: 50px;
+    animation-duration: 1s;
+}
+.grey{
+    background-color: #9ad3fa;
+}
+.green{
+    background-color: #78e2aa;
+}
+.blue{
+    background-color: #63e3ff;
+}
+.red{
+    background-color: #f69ec4;
+}
+.orange{
+    background-color: #ffc07e;
+}
+.yellow{
+    background-color: #ffef7e;
+}
+.back{
+    width: 75px;
+}
+.black{
+    color: black;
+}
+.caps{
+    width: 100px;
+}
+.enter{
+    width: 90px;
+}
+    @keyframes dAnimation {
+    0%{
+        background-color: transparent;
+    }
+    50%{
+        background-color: red;
+    }
+    100%{
+        background-color: transparent;
+    }
+}
+.backscape{
+    width: 450px;
+    margin: 0 auto;
+}
+.shift{
+    width: 130px;
+}
+
+.error{
+    animation-name: dAnimation;
+}
+.width{
+    display: none;
+    color: #999;
+    width: 500px;
+    height: 200px;
+    margin: 100px auto;
+    border-radius: 15px;
+    padding: 30px 20px;
+    background-color: #fff;
+}
+.learn{
+    width: 230px;
+    margin: 50px auto;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffde00;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.width h1{
+    font-size: 24px;
+}
+
+.section2{
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.section2image{
+    width: 400px;
+}
+.score{
+    width: 400px;
+    margin-right: 100px;
+    margin-top: -150px;
+    color: #999;
+    height: 250px;
+    padding: 20px 25px;
+    position: relative;
+    border-radius: 15px;
+    background-color: #fff;
+}.class{
+    margin-top: 20px;
+    cursor: pointer;
+}
+.nasid{
+    font-size: 18px;
+}
+.scoreee{
+    font-size: 50px;
+}
+.sajda{
+    font-size: 16px;
+    width: 90%;
+    color: black;
+    margin-top: 5px;
+}
+.uch{
+    position: absolute;
+    content: '';
+    border-style: solid;
+    border-width: 0 150px 60px 6px;
+    right: -100px;
+    bottom: 60px;
+    z-index: -1;
+    border-color: transparent transparent #fff transparent;
+    -webkit-transform: rotate(6deg);
+    -ms-transform: rotate(6deg);
+    transform: rotate(6deg);
+}
+.backlevel{
+    width: 200px;
+    background-color:#ffc07e;
+}
+.section3{
+    display: block;
+    width: 100%;
+}
+.bosqichlari{
+    display: block;
+    width: 380px;
+    height: 390px;
+    border-radius: 15px;
+    position: relative;
+    padding: 20px 35px;
+    background-color: #fff;
+    margin: 120px auto;
+}
+.edit_level{
+    width: 112%;
+    left: -6%;
+    top: 180px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.edit_level div{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    font-size: 25px;
+    justify-content: center;
+}
+#next{
+    box-shadow: -2px 2px 2px;
+}
+.level{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.bolim{
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    color: #111;
+    border-radius: 7px;
+}
+.row1{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    justify-content: space-around;
+}
+.disabled{
+    cursor: not-allowed;
+}
+@media (max-width: 900px) {
+    .keyboard{
+        display: none;
+    }
+    .soz{
+        display: none;
+    }
+    .width{
+        display: block;
+    }
+    .section2{
+        display: none;
+    }
+    .section3{
+        display: none;
+    }
+}
+    </style>
+</head>
+<body>
+    <audio id="audio">
+        <source src="img/music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+    <section class="section1">
+    <div class="soz"><p class="false"><span class="true"></span></p></div>
+    <div class="keyboard">
+        <div class="row">
+            <div id="`" class="button grey"><p>`</p></div>
+            <div id="1" class="button green"><p>1</p></div>
+            <div id="2" class="button green"><p>2</p></div>
+            <div id="3" class="button blue"><p>3</p></div>
+            <div id="4" class="button red"><p>4</p></div>
+            <div id="5" class="button orange"><p>5</p></div>
+            <div id="6" class="button orange"><p>6</p></div>
+            <div id="7" class="button yellow"><p>7</p></div>
+            <div id="8" class="button red"><p>8</p></div>
+            <div id="9" class="button blue"><p>9</p></div>
+            <div id="0" class="button green"><p>0</p></div>
+            <div id="-" class="button green"><p>-</p></div>
+            <div id="?" class="button green"><p>?</p></div>
+            <div id="🔙" class="button grey back"><p>🔙</p></div>
+        </div>
+        <div class="row">
+            <div id="tab" class="button grey back"><p>Tab</p></div>
+            <div id="q" class="button green"><p>Q</p></div>
+            <div id="w" class="button black blue"><p>W</p></div>
+            <div id="e" class="button black red"><p>E</p></div>
+            <div id="r" class="button black orange"><p>R</p></div>
+            <div id="t" class="button black orange"><p>T</p></div>
+            <div id="y" class="button black yellow"><p>Y</p></div>
+            <div id="u" class="button black yellow"><p>U</p></div>
+            <div id="i" class="button black red"><p>I</p></div>
+            <div id="o" class="button black blue"><p>O</p></div>
+            <div id="p" class="button black green"><p>P</p></div>
+            <div id="[" class="button green"><p>[</p></div>
+            <div id="]" class="button green"><p>]</p></div>
+            <div id="\" class="button grey"><p>\</p></div>
+        </div>
+        <div class="row">
+            <div id="caps" class="button grey caps"><p>Caps</p></div>
+            <div id="a" class="button black green"><p>A</p></div>
+            <div id="s" class="button black blue"><p>S</p></div>
+            <div id="d" class="button black red"><p>D</p></div>
+            <div id="f" class="button black orange"><p>F</p></div>
+            <div id="g" class="button orange"><p>G</p></div>
+            <div id="h" class="button black yellow"><p>H</p></div>
+            <div id="j" class="button yellow"><p>J</p></div>
+            <div id="k" class="button red"><p>K</p></div>
+            <div id="l" class="button blue"><p>L</p></div>
+            <div id=";" class="button green"><p>;</p></div>
+            <div id="'" class="button green"><p>'</p></div>
+            <div id="enter" class="button grey enter"><p>Enter</p></div>
+        </div>
+        <div class="row">
+                <div id="shift" class="button grey shift"><p>Shift</p></div>
+                <div id="z" class="button green"><p>Z</p></div>
+                <div id="x" class="button blue"><p>X</p></div>
+                <div id="c" class="button black red"><p>C</p></div>
+                <div id="v" class="button orange"><p>V</p></div>
+                <div id="b" class="button orange"><p>B</p></div>
+                <div id="n" class="button black yellow"><p>N</p></div>
+                <div id="m" class="button black yellow"><p>M</p></div>
+                <div id="," class="button red"><p>,</p></div>
+                <div id="." class="button blue"><p>.</p></div>
+                <div id="/" class="button green"><p>/</p></div>
+                <div id="shift" class="button grey shift"><p>Shift</p></div>
+        </div>
+        <div class="row">
+            <div id=" " class="button grey backscape"></div>
+        </div>
+        <img src="img/hands.png" class="hand" alt="">
+    </div>
+</section>
+<section class="section2">
+    <div class="score">
+        <div class="uch"></div>
+        <h2 class="scoreee">26</h2>
+        <h4 class="nasid">WORDS PER MINUTE</h4>
+        <p class="sajda">You type faster than <span>15</span>% of users, but you can do better! Ratatype's lessons can help you improve your typing speed.</p>
+        <div class="learn class" onclick="nextlevel()"><a href=""></a>Go to levels</div>
+    </div>
+    <img src="img/section2.png" class="section2image" alt="">
+</section>
+<section class="section3">
+    <div class="bosqichlari" id = 'bosqich1'>
+    <h1 class="level">Levels [1]</h1>
+        <div class="edit_level">
+            <div class="back" onclick="level_go(3)" id="back"><i class="fa-solid fa-angle-left"></i></div>
+            <div class="next" onclick="level_go(2)" id="next"><i class="fa-solid fa-angle-right"></i></div>
+        </div>
+        <div class="row1">
+            <div onclick="bolim(1)" class="bolim green">1</div>
+            <div onclick="bolim(2)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(3)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(4)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+        </div>
+        <div class="row1">
+            <div onclick="bolim(5)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(6)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(7)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(8)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+        </div>
+        <div class="row1">
+            <div onclick="bolim(9)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(10)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(11)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(12)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+        </div>
+        <div class="row1">
+            <div onclick="bolim(13)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(14)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(15)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            <div onclick="bolim(16)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+        </div>
+        <div class="aylanalar">
+            <div onclick="level_go(1)" class="aylana aylana_activ"></div>
+            <div onclick="level_go(2)" class="aylana"></div>
+            <div onclick="level_go(3)" class="aylana"></div>
+        </div>
+    </div>
+    <div class="bosqichlari" id ='bosqich2'>
+        <h1 class="level">Levels [2]</h1>
+            <div class="edit_level">
+                <div class="back" onclick="level_go(1)" id="back"><i class="fa-solid fa-angle-left"></i></div>
+                <div class="next" onclick="level_go(3)" id="next"><i class="fa-solid fa-angle-right"></i></div>
+            </div>
+            <div class="row1">
+                <div onclick="bolim(17)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(18)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(19)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(20)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            </div>
+            <div class="row1">
+                <div onclick="bolim(21)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(22)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(23)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(24)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            </div>
+            <div class="row1">
+                <div onclick="bolim(25)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(26)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(27)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(28)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            </div>
+            <div class="row1">
+                <div onclick="bolim(29)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(30)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(31)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                <div onclick="bolim(32)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+            </div>
+            <div class="aylanalar">
+                <div onclick="level_go(1)" class="aylana"></div>
+                <div onclick="level_go(2)" class="aylana aylana_activ"></div>
+                <div onclick="level_go(3)" class="aylana"></div>
+            </div>
+        </div>
+        <div class="bosqichlari" id ='bosqich3'>
+            <h1 class="level">Levels [3]</h1>
+                <div class="edit_level">
+                    <div class="back" onclick="level_go(2)" id="back"><i class="fa-solid fa-angle-left"></i></div>
+                    <div class="next" onclick="level_go(1)" id="next"><i class="fa-solid fa-angle-right"></i></div>
+                </div>
+                <div class="row1">
+                    <div onclick="bolim(33)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(34)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(35)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(36)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                </div>
+                <div class="row1">
+                    <div onclick="bolim(37)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(38)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(39)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(40)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                </div>
+                <div class="row1">
+                    <div onclick="bolim(41)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(42)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(43)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(44)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                </div>
+                <div class="row1">
+                    <div onclick="bolim(45)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(46)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(47)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                    <div onclick="bolim(48)" class="bolim red disabled"><i class="fa-solid fa-lock"></i></div>
+                </div>
+                <div class="aylanalar">
+                    <div onclick="level_go(1)" class="aylana"></div>
+                    <div onclick="level_go(2)" class="aylana"></div>
+                    <div onclick="level_go(3)" class="aylana aylana_activ"></div>
+                </div>
+            </div>
+</section>
+    <div class="width">
+        <h1>Please, zoom out on the page (Ctrl with -)</h1>
+        <div class="learn">LEARN TOUCH TYPING<a href="https://www.ratatype.com/learn/">
+        </a></div>
+    </div>
+    <script>
+        let vaqt_hisob = 0
+function vaqt(){
+    vaqt_hisob +=1
+}
+first  = "In many countries around the world, boys and girls are educated together. There is a group of countries, however, that educate boys and girls separately. This is frequently done on religious grounds, but not always. Having such a system can produce various advantages and disadvantages. One of the principal reasons for educating boys and girls separately is that, if they are together, they can distract each other. After puberty, boys can be strongly attracted to girls and vice versa, and this can result in disruptive conduct in the classroom as, for example, they show off to one another. Separating boys and girls can therefore have the distinct advantage of reducing this disturbing behaviour. However, some teachers have pointed out that this model does not always work, and that separated boys and girls are equally disruptive in class, and sometimes more so. These teachers say that having the opposite sex in the classroom can actually improve behaviour.Many educators also believe that boys and girls have different learning styles and needs. Separating boys and girls can allow teachers to address these needs more easily. There is also a belief that single sex schools allow gender stereotypes to be challenged and therefore education aspirations can be broadened.A major disadvantage of separating boys and girls in education is that the children miss important formative behavioural development when they do not have interaction with the other gender on a regular basis. This can lead to shyness and, more seriously, dysfunctional relationships later in life. Some people also feel that mixed sex schools can promote gender stereotypes rather than reducing them.In conclusion, I feel that children should be educated all together, although I would respect a system in which they are separated due to religious beliefs. My personal opinion is that different genders should learn to interact together from an early age, as this would allow them to develop healthy working relationships with each other."
+second = "With ever increasing technological advances, computers and robots are replacing human roles in different areas of society. This trend can also be seen in education, where interactive programs can enhance the educational experience for children and young adults. Whether, however, this revolution can also take over the role of the teacher completely is debatable, and I oppose this idea as it is unlikely to serve students well.The roles of computers and robots can be seen in many areas of the workplace. Classic examples are car factories, where a lot of the repetitive precision jobs done on assembly lines have been performed by robots for many years, and medicine, where diagnosis, and treatment, including operations, have also been assisted by computers for a long time. According to the media, it won't also be long until we have cars that are driven automatically.It has long been discussed whether robots and computers can do this in education. It is well known that the complexity of programs can now adapt to so many situations that something can already be set up that has the required knowledge of the teacher, along with the ability to predict and answer all questions that might be asked by students. In fact, due to the nature of computers, the knowledge levels can far exceed a teacher's and have more breadth, as a computer can have equal knowledge in all the subjects that are taught in school, as opposed to a single teacher's specialisation. It seems very likely, therefore, that computers and robots should be able to deliver the lessons that teachers can, including various ways of differentiating and presenting materials to suit varying abilities and ages of students.Where I am not convinced is in the pastoral role of teachers. Part of teaching is managing behaviour and showing empathy with students, so that they feel cared for and important. Even if a robot or computer can be programmed to imitate these actions, students will likely respond in a different way when they know an interaction is part of an algorithm rather than based on human emotion.Therefore, although I feel that computers should be able to perform a lot of the roles of teachers in the future,"
+third = " they should be used as educational tools to assist teachers and not to replace them. In this way, students would receive the benefits of both ways of instruction. If one wants to work for money, there are really only two options, working for someone else for a salary and being self-employed. Most people are involved with these two options and they both have advantages and disadvantages.Being self-employed means that the worker owns the business that is being done. This might be a small one-person business or a large company with hundreds of employees. The first advantage of this is the capacity to earn more money. If the business does very well, the income can be considerable and the owner of the company will receive the benefits. On the other hand, if business is not good, the owner's income will be low. Self-employed people also have the benefit to some extent of choosing their working hours and holidays and they have the right to change anything within their business. With this autonomy, however, comes the pressure to succeed and the reliance on one's employees, if there are any, to do their best to make the business thrive.Salaried workers do not experience the same stress as the self-employed owners of companies. They might have stress in their duties, but the pressure that comes with keeping one's own business operating successfully in order to support oneself and one's family is just not felt by an employee. The employee also has a certain knowledge of his or her income, as the salary is usually fixed every month. The self-employed owner's income often depends on how successful the business is. The employee's fixed income, however, does not give much scope for earning large amounts more. In addition, an employee does not have the freedoms of the owner or the autonomy, and for many people, having control over their lives is a significant factor to their well-being.It is certain that there are advantages and disadvantages for both being self-employed and salaried. I personally disagree that being salaried is better than being self-employed. I prefer the autonomy that being self-employed brings and, although there is more risk and pressure, this can lead to greater and more fulfilling rewards."
+texts = first+second+third
+texts = texts.split(' ')
+let number = 0;sonsdjkadn = 0
+let Soz = "",sadsa = "",soz = "";raqam= 0;level = 1
+var belgi11 = document.getElementById('a')
+var togri = document.querySelector('.true').innerText
+function tekshir(){
+    var gap = document.querySelector('.false').innerText.toLowerCase()
+    var belgi = document.getElementById(gap[number])
+    try {
+        belgi.style = "border: 2px solid red"
+    } catch {
+       console.log('Error'); 
+    }
+    if (number!=0){
+        try {
+            var belgi1 = document.getElementById(gap[number-1])
+            belgi1.style = "border: 0"            
+        } catch{
+          console.log('Error');  
+        }
+
+    }
+}
+document.addEventListener('keydown',keyboard)
+function keyboard(harf){
+    if (getComputedStyle(document.querySelector('.keyboard')).display == "block"){
+    if (harf.key.length == 1){
+        if (sonsdjkadn == 0) {
+            myTimer = setInterval(vaqt, 1000)
+        }
+        sonsdjkadn+=1
+    document.querySelector('.hand').style = "display: none"
+        Soz = harf.key.toLowerCase()
+        belgi11.style = "animation-name: none;"
+        var gap = document.querySelector('.false').innerText.toLowerCase()
+        try{
+            var belgi = document.getElementById(gap[number])
+            belgi.style = "border: 2px solid red"
+            belgi11 = document.getElementById(harf.key.toLowerCase())
+        }catch{
+            console.log('Error');
+        }
+        if (gap[number] == Soz){
+            number+=1
+            raqam +=1
+            soz+=Soz
+            askak = document.querySelector('.false').innerText.split("")
+            askak.splice(number-raqam, raqam)
+            sadsa = ''
+            for (let i = 0; i < askak.length; i++) {
+                sadsa += askak[i]
+            }
+            document.querySelector('.false').innerHTML = `<span class="true">${soz}</span><div class="chiziq"></div>${sadsa}`
+            if (number == gap.length){
+                document.querySelector('.section1').style= 'display: none' 
+                document.querySelector('.section2').style= 'display: flex'
+                hisoblash = document.querySelector(".scoreee")
+                soz_soni = gap.split(" ").length
+                hisoblash.innerText = Math.floor(soz_soni / (vaqt_hisob/60))
+                vaqt_hisob = 0
+                sonsdjkadn = 0
+                clearInterval(myTimer)
+                var x = document.getElementById("audio");
+                x.autoplay = false;
+                x.load();
+            }
+            tekshir()
+        }
+        else{
+            belgi11.style = "animation-name: dAnimation;"
+        }
+    }}
+}
+var  levell = 1
+var levelmax = 1
+tekshir()
+function bolim(level){
+    if (level<=levelmax){
+    levell = level
+    var x = document.getElementById("audio");
+    x.autoplay = true;
+    x.load();
+    document.querySelector('.section1').style = "display: block"
+    document.querySelector('.section3').style = "display: none"
+    nimadir_son = Math.floor(Math.random()*texts.length-level*3.5)
+    if (level<25){
+        leveldsa = level*3
+    }else{
+        leveldsa = level*2.2
+    }
+    snakjd = ''
+    for (let jhdgsj = nimadir_son; jhdgsj < nimadir_son + leveldsa; jhdgsj++) {
+        snakjd+=' '+texts[jhdgsj] 
+    }
+    document.querySelector('.false').innerText = snakjd+'.'
+    gap = document.querySelector('.false').innerText
+    tekshir()
+}
+}
+function level_go(level_id){
+    for (let gh = 1; gh < 4; gh++) {
+        document.querySelector(`#bosqich${gh}`).style = "display: none;"
+    }
+    document.querySelector(`#bosqich${level_id}`).style = "display: block;"
+}
+function nextlevel(){
+    levelmax+=1
+    document.querySelector('.section3').style = "display: block"
+    document.querySelector('.section2').style = "display: none"
+    let levels = document.querySelectorAll(".bolim")
+    levels[levell].innerHTML = levell+1
+    levels[levell].classList.remove('red')
+    levels[levell].classList.add('green')
+    levels[levell].classList.remove('disabled')
+    gap = document.querySelector('.false').innerText
+    number = 0
+    var belgi = document.getElementById(gap[number])
+    document.getElementById(".").style = "border:0"
+    belgi.style = "border: 2px solid red"
+    document.querySelector('.hand').style = "display: block"
+    soz = ""
+    raqam = 0;
+    number = 0
+}
+    </script>
+</body>
+</html>
